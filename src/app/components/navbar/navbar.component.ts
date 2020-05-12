@@ -2,6 +2,8 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
+import swal from "sweetalert2";
+import {AuthService} from '../../usuarios/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +11,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+    logout(): void {
+        let username = this.authService.usuario.username;
+        this.authService.logout();
+        swal('Logout', `Hola ${username}, has cerrado sesión con éxito!`, 'success');
+        this.router.navigate(['/login']);
+    }
+
     private listTitles: any[];
     location: Location;
       mobile_menu_visible: any = 0;
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(location: Location,  private element: ElementRef, private router: Router) {
+    constructor(private authService: AuthService, location: Location,  private element: ElementRef, private router: Router) {
       this.location = location;
           this.sidebarVisible = false;
     }
