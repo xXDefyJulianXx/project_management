@@ -18,6 +18,10 @@ export const ROUTES: RouteInfo[] = [
     // { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
     { path: '/introduction', title: 'Introducción al curso', icon: 'import_contacts', class: ''},
     { path: '/module-1', title: 'Project Charter', icon: 'chrome_reader_mode', class: ' ' },
+    { path: '/module-2', title: 'Grupo de Planeación', icon: 'assignment_turned_in', class: ' ' },
+    { path: '/module-3', title: 'Alcance', icon: 'assignment', class: ' ' },
+    { path: '/module-4', title: 'StakeHolders', icon: 'group', class: ' ' },
+    { path: '/module-5', title: 'Cronograma', icon: 'date_range', class: ' ' }
 ];
 
 @Component({

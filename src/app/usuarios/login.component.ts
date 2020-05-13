@@ -3,17 +3,24 @@ import { Usuario } from './usuario';
 import swal from 'sweetalert2';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
+  providers: [Title]
 })
 export class LoginComponent implements OnInit {
 
-  titulo: string = 'Por favor Sign In!';
+  titulo: string = 'Curso virtual VCUR';
   usuario: Usuario;
+  hide: boolean = true;
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService,
+              private router: Router,
+              private title: Title ) {
+    this.title.setTitle('Curso Virtual VCUR - Inicia sesión')
     this.usuario = new Usuario();
   }
 

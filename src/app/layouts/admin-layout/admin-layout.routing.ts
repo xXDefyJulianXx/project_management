@@ -12,6 +12,11 @@ import { IntroductionModuleComponent } from 'app/components/introduction-module/
 import {PreguntasComponent} from '../../preguntas/preguntas.component';
 import {AuthGuard} from '../../usuarios/guards/auth.guard';
 import {RoleGuard} from '../../usuarios/guards/role.guard';
+import { ProjectCharterComponent } from 'app/components/project-charter/project-charter.component';
+import { PlanningGroupComponent } from 'app/components/planning-group/planning-group.component';
+import { ScopeComponent } from 'app/components/scope/scope.component';
+import { StakeholdersComponent } from 'app/components/stakeholders/stakeholders.component';
+import { ScheduleComponent } from 'app/components/schedule/schedule.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -65,5 +70,10 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'introduction',   component: IntroductionModuleComponent },
+    { path: 'module-1',       component: ProjectCharterComponent },
+    { path: 'module-2',       component: PlanningGroupComponent },
+    { path: 'module-3',       component: ScopeComponent },
+    { path: 'module-4',       component: StakeholdersComponent },
+    { path: 'module-5',       component: ScheduleComponent },
     {path: 'actividad/:modulo', component: PreguntasComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'}},
 ];

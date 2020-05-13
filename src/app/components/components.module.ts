@@ -8,6 +8,11 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { IntroductionModuleComponent } from './introduction-module/introduction-module.component';
 import { DomseguroPipe } from 'app/pipes/domseguro.pipe';
 import {PreguntasComponent} from '../preguntas/preguntas.component';
+import { ProjectCharterComponent } from './project-charter/project-charter.component';
+import { PlanningGroupComponent } from './planning-group/planning-group.component';
+import { ScopeComponent } from './scope/scope.component';
+import { StakeholdersComponent } from './stakeholders/stakeholders.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 @NgModule({
   imports: [
@@ -20,7 +25,12 @@ import {PreguntasComponent} from '../preguntas/preguntas.component';
     SidebarComponent,
     IntroductionModuleComponent,
     PreguntasComponent,
-    DomseguroPipe
+    DomseguroPipe,
+    ProjectCharterComponent,
+    PlanningGroupComponent,
+    ScopeComponent,
+    StakeholdersComponent,
+    ScheduleComponent
   ],
   exports: [
     FooterComponent,
