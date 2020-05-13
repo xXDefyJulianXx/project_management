@@ -9,6 +9,9 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { IntroductionModuleComponent } from 'app/components/introduction-module/introduction-module.component';
+import {PreguntasComponent} from '../../preguntas/preguntas.component';
+import {AuthGuard} from '../../usuarios/guards/auth.guard';
+import {RoleGuard} from '../../usuarios/guards/role.guard';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -61,5 +64,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
-    { path: 'introduction',   component: IntroductionModuleComponent }
+    { path: 'introduction',   component: IntroductionModuleComponent },
+    {path: 'actividad/:modulo', component: PreguntasComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'}},
 ];

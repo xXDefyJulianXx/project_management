@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { IntroductionModuleComponent } from './introduction-module/introduction-module.component';
 import { DomseguroPipe } from 'app/pipes/domseguro.pipe';
+import {PreguntasComponent} from '../preguntas/preguntas.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { DomseguroPipe } from 'app/pipes/domseguro.pipe';
     NavbarComponent,
     SidebarComponent,
     IntroductionModuleComponent,
+    PreguntasComponent,
     DomseguroPipe
   ],
   exports: [
