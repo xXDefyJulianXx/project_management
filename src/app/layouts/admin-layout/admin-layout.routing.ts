@@ -75,6 +75,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'module-3',       component: ScopeComponent },
     { path: 'module-4',       component: StakeholdersComponent },
     { path: 'module-5',       component: ScheduleComponent },
-    // { path: 'actividad/:modulo', component: PreguntasComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'} },
-    { path: 'actividad/:modulo', component: PreguntasComponent },
+    { path: 'actividad/:modulo', component: PreguntasComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'} },
+    // { path: 'actividad/:modulo', component: PreguntasComponent },
 ];
