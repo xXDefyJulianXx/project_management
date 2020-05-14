@@ -17,6 +17,7 @@ export const ROUTES: RouteInfo[] = [
     // { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
     // { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
     { path: '/introduction', title: 'Introducción al curso', icon: 'import_contacts', class: ''},
+    { path: '/module-1', title: 'Project Charter', icon: 'chrome_reader_mode', class: ' ' },
     { path: '/actividad/MODULO_UNO', title: 'Actividad Módulo 1', icon: 'sports_esports', class: ' ' },
     { path: '/module-2', title: 'Grupo de Planeación', icon: 'assignment_turned_in', class: ' ' },
     { path: '/module-3', title: 'Alcance', icon: 'assignment', class: ' ' },
