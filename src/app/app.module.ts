@@ -26,6 +26,7 @@ import {
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import {LoginComponent} from './usuarios/login.component';
 import { PreguntasComponent } from './preguntas/preguntas.component';
+import { AlcanceComponent } from './components/alcance/alcance.component';
 
 @NgModule({
   imports: [
@@ -43,6 +44,7 @@ import { PreguntasComponent } from './preguntas/preguntas.component';
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
+    AlcanceComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
