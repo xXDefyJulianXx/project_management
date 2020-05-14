@@ -1,10 +1,11 @@
 <app-navbar></app-navbar>
 <div class="main-content">
     <div class="row">
-
-
-        <div class="card-header border card-header-warning card-header-icon col-3 bg-danger" *ngFor="let pregunta of items  ; let i = index">
-            <h1 class="text-white">{{i+1}}</h1>
+        <div class="card-header border card-header-warning card-header-icon col-3 bg-danger" (click)="selectItem($event, item)"
+             [className]="(!item.mostrar)? 'card-header border card-header-warning card-header-icon col-3 bg-danger': 'card-header border card-header-warning card-header-icon col-3 bg-info' "
+             *ngFor="let item of items  ; let i = index">
+            <h1 *ngIf="!item.mostrar" class="text-white">{{i+1}}</h1>
+            <p *ngIf="item.mostrar" class="card-category">{{item.elemento}}</p>
         </div>
     </div>
 </div>
