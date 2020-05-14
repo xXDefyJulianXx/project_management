@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Usuario } from './usuario';
 import swal from 'sweetalert2';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { NotificationsComponent } from 'app/notifications/notifications.component';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ import { Title } from '@angular/platform-browser';
   providers: [Title]
 })
 export class LoginComponent implements OnInit {
-
+  
+  @ViewChild('notifications') notifications: NotificationsComponent;
   titulo: string = 'Curso virtual VCUR';
   usuario: Usuario;
   hide: boolean = true;
@@ -26,7 +28,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.isAuthenticated()) {
-      swal('Login', `Hola ${this.authService.usuario.username} ya estás autenticado!`, 'info');
+      this.notifications.showNotification('check_circle',`Hola ${this.authService.usuario.username} ya estás autenticado!`,'bottom', 'right', 2)
+      // swal('Login', `Hola ${this.authService.usuario.username} ya estás autenticado!`, 'info');
       this.router.navigate(['/dashboard']);
     }
   }
@@ -34,7 +37,7 @@ export class LoginComponent implements OnInit {
   login(): void {
     console.log(this.usuario);
     if (this.usuario.username == null || this.usuario.password == null) {
-      swal('Error Login', 'Username o password vacías!', 'error');
+      this.notifications.showNotification('notification_important','Debes llenar todos los campos','bottom', 'right', 3)
       return;
     }
 

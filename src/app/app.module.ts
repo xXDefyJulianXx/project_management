@@ -27,6 +27,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import {LoginComponent} from './usuarios/login.component';
 import { PreguntasComponent } from './preguntas/preguntas.component';
 import { AlcanceComponent } from './components/alcance/alcance.component';
+import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { AlcanceComponent } from './components/alcance/alcance.component';
     AppRoutingModule,
     HttpClientModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    AdminLayoutModule
   ],
   declarations: [
     AppComponent,

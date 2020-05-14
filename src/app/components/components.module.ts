@@ -30,7 +30,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
     PlanningGroupComponent,
     ScopeComponent,
     StakeholdersComponent,
-    ScheduleComponent
+    ScheduleComponent,
   ],
   exports: [
     FooterComponent,
