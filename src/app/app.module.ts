@@ -24,9 +24,8 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import {LoginComponent} from './usuarios/login.component';
+import { LoginComponent } from './usuarios/login.component';
 import { PreguntasComponent } from './preguntas/preguntas.component';
-import { AlcanceComponent } from './components/alcance/alcance.component';
 import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
 
 @NgModule({
@@ -45,8 +44,7 @@ import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    LoginComponent,
-    AlcanceComponent,
+    LoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

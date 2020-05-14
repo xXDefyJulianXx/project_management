@@ -17,7 +17,6 @@ import { PlanningGroupComponent } from 'app/components/planning-group/planning-g
 import { ScopeComponent } from 'app/components/scope/scope.component';
 import { StakeholdersComponent } from 'app/components/stakeholders/stakeholders.component';
 import { ScheduleComponent } from 'app/components/schedule/schedule.component';
-import {AlcanceComponent} from '../../components/alcance/alcance.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -73,8 +72,9 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'introduction',   component: IntroductionModuleComponent },
     { path: 'module-1',       component: ProjectCharterComponent },
     { path: 'module-2',       component: PlanningGroupComponent },
-    { path: 'module-3',       component: AlcanceComponent },
+    { path: 'module-3',       component: ScopeComponent },
     { path: 'module-4',       component: StakeholdersComponent },
     { path: 'module-5',       component: ScheduleComponent },
-    {path: 'actividad/:modulo', component: PreguntasComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'}},
+    // { path: 'actividad/:modulo', component: PreguntasComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'} },
+    { path: 'actividad/:modulo', component: PreguntasComponent },
 ];

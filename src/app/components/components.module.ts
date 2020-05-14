@@ -13,11 +13,12 @@ import { PlanningGroupComponent } from './planning-group/planning-group.componen
 import { ScopeComponent } from './scope/scope.component';
 import { StakeholdersComponent } from './stakeholders/stakeholders.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { NotificationsComponent } from 'app/notifications/notifications.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,
+    RouterModule
   ],
   declarations: [
     FooterComponent,
@@ -31,11 +32,13 @@ import { ScheduleComponent } from './schedule/schedule.component';
     ScopeComponent,
     StakeholdersComponent,
     ScheduleComponent,
+    NotificationsComponent
   ],
   exports: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    NotificationsComponent
   ]
 })
 export class ComponentsModule { }
