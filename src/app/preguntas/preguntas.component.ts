@@ -34,6 +34,7 @@ export class PreguntasComponent implements OnInit {
                         this.items.push({id: pregunta.id, elemento: pregunta.pregunta, mostrar: false, correcto: false});
                         this.items.push({id: pregunta.id, elemento: pregunta.respuesta, mostrar: false, correcto: false});
                     });
+                    //this.items = this.items.sort(function() {return (Math.random() - 0.5)});
                 }, error => {
                     console.error('Ha ocurrido un error', error)
                     this.notifications.showNotification('notification_important','Ha ocurrido un error intentalo más tarde','bottom', 'right', 4)
@@ -64,6 +65,7 @@ export class PreguntasComponent implements OnInit {
                 });
                 this.item1 = null;
                 this.item2 = null;
+                this.notifications.showNotification('check','¡Correcto!','bottom', 'right', 1)
             } else {
                 timer(1000).subscribe(x => { console.log('la pareja no es la misma')
                     this.items.filter(x => x.id == this.item1.id).forEach(x => {
@@ -78,6 +80,7 @@ export class PreguntasComponent implements OnInit {
                         this.item1 = null;
                         this.item2 = null;
                     })});
+                this.notifications.showNotification('notification_important','¡Incorrecto!','bottom', 'right', 4);;
             }
 
         }

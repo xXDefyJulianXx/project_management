@@ -15,26 +15,11 @@
                         cualitativo o cuantitativo de características en funciona de dos variables,
                         obteniendo finalmente una agrupación de interesados con criterios comunes.</li>
                 </ul>
-                <div class="row">
-                    <div class="card-header border card-header-warning card-header-icon col-3 bg-danger"
-                        (click)="selectItem($event, item)"
-                        [className]="(!item.mostrar)
-                        ? 'card-header border card-header-warning card-header-icon col-3 bg-danger':
-                        (item.correcto)?'card-header border card-header-warning card-header-icon col-3 bg-success':'card-header border card-header-warning card-header-icon col-3 bg-info' "
-                        *ngFor="let item of items ; let i = index">
-                        <h1 *ngIf="!item.mostrar" class="text-white">{{i + 1}}</h1>
-                        <h1 *ngIf="item.correcto" class="text-white">{{item.id}}<i
-                                class="material-icons text-white ">check</i>
-                        </h1>
-                        <p *ngIf="item.mostrar" class="card-category">{{item.elemento}}</p>
-                    </div>
-                </div>
-                <app-notifications #notifications></app-notifications>
             </div>
         </div>
     </div>
-</div>
-<!-- <div class="container-fluid">
+
+<div class="container-fluid">
         <div class="row">
             <div class="card-header border card-header-warning card-header-icon col-3 bg-danger"
                 (click)="selectItem($event, item)"
@@ -48,4 +33,6 @@
                 <p *ngIf="item.mostrar" class="card-category">{{item.elemento}}</p>
             </div>
         </div>
-    </div> -->
+</div>
+</div>
+<app-notifications #notifications></app-notifications>
