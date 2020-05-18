@@ -1,0 +1,39 @@
+<br/>
+<br/>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-stats" *ngFor="let item of items; let index = index">
+            <div class="card-header card-header-info card-header-icon">
+                <div class="card-icon">
+                    <h2>{{index + 1}}</h2>
+                </div>
+                <div class="col-md-12">
+                    <h3 class="card-title text-left">{{item.pregunta}}</h3>
+                    <h3 class="card-title">{{index + 1}}/{{items.length}}</h3>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 text-md-center">
+                        <div class="row">
+                            <div class="form-check form-check-radio col-md-12"
+                                 *ngFor="let itemRespuesta of item.respuestas; let i = index">
+                                <label class="form-check-label col-md-4">
+                                    <input class="form-check-input" type="radio" name="exampleRadios{{item}}{{index}}"
+                                           id="exampleRadios{{item}}{{index}}" value="option{{index}}"
+                                           (click)="selectRespuesta(itemRespuesta,item)">
+                                    {{itemRespuesta.respuesta}}
+                                    <span class="circle"><span class="check"></span></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-12">
+        <button  class="btn btn-info" (click)="validarEvaluacion()">Verificar</button>
+    </div>
+</div>
