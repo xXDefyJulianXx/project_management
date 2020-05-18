@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {PreguntasService} from '../preguntas/preguntas.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Pregunta} from '../preguntas/model/pregunta';
@@ -6,6 +6,8 @@ import {ItemAhorcado} from '../preguntas/model/itemAhorcado';
 import {ItemEvaluacion} from './itemEvaluacion';
 import {SubItemEvalauacion} from './subItemEvalauacion';
 import swal from 'sweetalert2';
+import {PdfGenerateComponent} from '../components/pdf-generate/pdf-generate.component';
+import {NotificationsComponent} from '../notifications/notifications.component';
 
 @Component({
     selector: 'app-evaluacion',
@@ -14,6 +16,7 @@ import swal from 'sweetalert2';
 })
 export class EvaluacionComponent implements OnInit {
 
+    @ViewChild('pdf') pdf: PdfGenerateComponent;
     preguntas: Pregunta[];
     preguntasFilter: Pregunta[];
     items: ItemEvaluacion[] = new Array();
@@ -71,6 +74,7 @@ export class EvaluacionComponent implements OnInit {
         if(promedio < 60){
             swal('Fallasté', 'Obtuviste un promedio de '.concat(promedio.toString()).concat('sobre 100'), 'error');
         }else{
+            this.pdf.generatePdf();
             swal('Bien hecho', 'Obtuviste un promedio de '.concat(promedio.toString()).concat('sobre 100'), 'success');
         }
     }

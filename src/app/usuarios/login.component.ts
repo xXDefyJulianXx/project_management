@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
       console.log(response);
       let user: User = { name: response.nombre,
                   lastName: response.apellido,
-                  document: 1012459317 }
+                  document: response.cedula }
 
       this.localStorage.setUserInfo(user)
       this.authService.guardarUsuario(response.access_token);

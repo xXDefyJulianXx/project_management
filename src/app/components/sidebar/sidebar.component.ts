@@ -25,7 +25,6 @@ export const ROUTES: RouteInfo[] = [
     { path: '/module-5', title: 'Cronograma', icon: 'date_range', class: ' ' },
     { path: '/actividad-dos/MODULO_DOS', title: 'Actividad Módulo 2', icon: 'sports_esports', class: ' ' },
     { path: '/evaluacion/EVALUACION', title: 'Evaluación', icon: 'sports_esports', class: ' ' },
-    { path: '/module-5', title: 'Cronograma', icon: 'date_range', class: ' ' },
     { path: '/pdf', title: 'PDF', icon: 'assignment_turned_in', class: 'active-pro' }
 
 ];

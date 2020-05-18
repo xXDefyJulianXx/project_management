@@ -16,7 +16,9 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { NotificationsComponent } from 'app/notifications/notifications.component';
 import { PdfGenerateComponent } from './pdf-generate/pdf-generate.component';
 import { PdfMakeWrapper } from 'pdfmake-wrapper';
-import pdfFonts from "pdfmake/build/vfs_fonts"; // fonts provided for pdfmake
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+import {AhorcadoComponent} from '../preguntas/ahorcado/ahorcado.component';
+import {EvaluacionComponent} from '../evaluacion/evaluacion.component'; // fonts provided for pdfmake
  
 // Set the fonts to use
 PdfMakeWrapper.setFonts(pdfFonts);
@@ -39,7 +41,9 @@ PdfMakeWrapper.setFonts(pdfFonts);
     StakeholdersComponent,
     ScheduleComponent,
     NotificationsComponent,
-    PdfGenerateComponent
+    PdfGenerateComponent,
+    AhorcadoComponent,
+    EvaluacionComponent
   ],
   exports: [
     FooterComponent,
