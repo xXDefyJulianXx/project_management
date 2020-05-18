@@ -6,4 +6,5 @@ export class Usuario {
   apellido: string;
   email: string;
   roles: string[] = [];
+  cedula:number;
 }
