@@ -14,6 +14,12 @@ import { ScopeComponent } from './scope/scope.component';
 import { StakeholdersComponent } from './stakeholders/stakeholders.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { NotificationsComponent } from 'app/notifications/notifications.component';
+import { PdfGenerateComponent } from './pdf-generate/pdf-generate.component';
+import { PdfMakeWrapper } from 'pdfmake-wrapper';
+import pdfFonts from "pdfmake/build/vfs_fonts"; // fonts provided for pdfmake
+ 
+// Set the fonts to use
+PdfMakeWrapper.setFonts(pdfFonts);
 
 @NgModule({
   imports: [
@@ -32,7 +38,8 @@ import { NotificationsComponent } from 'app/notifications/notifications.componen
     ScopeComponent,
     StakeholdersComponent,
     ScheduleComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    PdfGenerateComponent
   ],
   exports: [
     FooterComponent,

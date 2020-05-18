@@ -4,20 +4,15 @@ import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common'
 import { Router } from '@angular/router';
 import swal from "sweetalert2";
 import {AuthService} from '../../usuarios/auth.service';
+import { LocalStorageService } from 'app/providers/localStorage/local-storage.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
+  providers: [LocalStorageService]
 })
 export class NavbarComponent implements OnInit {
-
-    logout(): void {
-        let username = this.authService.usuario.username;
-        this.authService.logout();
-        swal('Logout', `Hola ${username}, has cerrado sesión con éxito!`, 'success');
-        this.router.navigate(['/login']);
-    }
 
     private listTitles: any[];
     location: Location;
@@ -25,7 +20,7 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(private authService: AuthService, location: Location,  private element: ElementRef, private router: Router) {
+    constructor(private authService: AuthService, location: Location,  private element: ElementRef, private router: Router, private localStorage: LocalStorageService) {
       this.location = location;
           this.sidebarVisible = false;
     }
@@ -131,5 +126,13 @@ export class NavbarComponent implements OnInit {
           }
       }
       return 'Dashboard';
+    }
+
+    logout(): void {
+        let username = this.authService.usuario.username;
+        this.authService.logout();
+        swal('Logout', `Hola ${username}, has cerrado sesión con éxito!`, 'success');
+        this.localStorage.clearStorage();
+        this.router.navigate(['/login']);
     }
 }
