@@ -21,6 +21,7 @@ export class PdfGenerateComponent implements OnInit {
     this.name = user.name;
     this.lastName = user.lastName;
     this.document = user.document;
+    this.generatePdf();
   }
 
   async generatePdf() {

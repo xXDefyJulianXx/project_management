@@ -55,7 +55,7 @@ export class EvaluacionComponent implements OnInit {
     }
 
     generarRespuestaIncorrecta(id: number, id2: number): SubItemEvalauacion {
-        console.log('leng', this.preguntasFilter.length);
+        // console.log('leng', this.preguntasFilter.length);
         const pregunta = this.preguntasFilter.filter(p => p.id != id && p.id != id2)[Math.floor(Math.random() * 0.5)];
         return {id: pregunta.id, respuesta: pregunta.respuesta, correcta: false};
     }
@@ -68,9 +68,9 @@ export class EvaluacionComponent implements OnInit {
         const preguntasCorrectas= this.items.filter(x => x.correcta == true).length;
         const total= this.items.length;
         const promedio = (preguntasCorrectas * 100) / total;
-        console.log('preguntasCorrectas', preguntasCorrectas);
-        console.log('total', total);
-        console.log('promedio', promedio)
+        // console.log('preguntasCorrectas', preguntasCorrectas);
+        // console.log('total', total);
+        // console.log('promedio', promedio)
         if(promedio < 60){
             swal('Fallasté', 'Obtuviste un promedio de '.concat(promedio.toString()).concat('sobre 100'), 'error');
         }else{
