@@ -71,11 +71,11 @@ export class EvaluacionComponent implements OnInit {
         // console.log('preguntasCorrectas', preguntasCorrectas);
         // console.log('total', total);
         // console.log('promedio', promedio)
-        if(promedio < 60){
-            swal('Fallasté', 'Obtuviste un promedio de '.concat(promedio.toString()).concat('sobre 100'), 'error');
+        if(promedio < 80){
+            swal('Fallasté', 'Obtuviste un promedio de '.concat(promedio.toString()).concat(' sobre 100'), 'error');
         }else{
             this.pdf.generatePdf();
-            swal('Bien hecho', 'Obtuviste un promedio de '.concat(promedio.toString()).concat('sobre 100'), 'success');
+            swal('Bien hecho', 'Obtuviste un promedio de '.concat(promedio.toString()).concat(' sobre 100'), 'success');
         }
     }
 

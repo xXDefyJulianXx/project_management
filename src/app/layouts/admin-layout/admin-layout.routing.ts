@@ -81,6 +81,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'actividad/:modulo', component: PreguntasComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'} },
     { path: 'actividad-dos/:modulodos', component: AhorcadoComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'} },
     { path: 'evaluacion/:evaluacion-modulos', component: EvaluacionComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'} },
-    { path: 'pdf', component: PdfGenerateComponent }
+    // { path: 'pdf', component: PdfGenerateComponent }
     // { path: 'actividad/:modulo', component: PreguntasComponent },
 ];
