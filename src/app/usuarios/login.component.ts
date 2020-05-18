@@ -5,6 +5,7 @@ import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { NotificationsComponent } from 'app/notifications/notifications.component';
+import { LocalStorageService, User } from 'app/providers/localStorage/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService,
               private router: Router,
-              private title: Title ) {
+              private title: Title,
+              private localStorage: LocalStorageService ) {
     this.title.setTitle('Curso Virtual VCUR - Inicia sesión')
     this.usuario = new Usuario();
   }
@@ -43,7 +45,11 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(this.usuario).subscribe(response => {
       console.log(response);
+      let user: User = { name: response.nombre,
+                  lastName: response.apellido,
+                  document: 1012459317 }
 
+      this.localStorage.setUserInfo(user)
       this.authService.guardarUsuario(response.access_token);
       this.authService.guardarToken(response.access_token);
       let usuario = this.authService.usuario;

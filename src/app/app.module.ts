@@ -25,10 +25,8 @@ import {
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './usuarios/login.component';
-import { PreguntasComponent } from './preguntas/preguntas.component';
 import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
-import { EvaluacionComponent } from './evaluacion/evaluacion.component';
-
+import { LocalStorageService } from './providers/localStorage/local-storage.service'
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -47,7 +45,7 @@ import { EvaluacionComponent } from './evaluacion/evaluacion.component';
     AdminLayoutComponent,
     LoginComponent
   ],
-  providers: [],
+  providers: [LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
