@@ -20,6 +20,7 @@ import { ScheduleComponent } from 'app/components/schedule/schedule.component';
 import {AhorcadoComponent} from '../../preguntas/ahorcado/ahorcado.component';
 import {EvaluacionComponent} from '../../evaluacion/evaluacion.component';
 import { PdfGenerateComponent } from 'app/components/pdf-generate/pdf-generate.component';
+import { CostsComponent } from 'app/components/costs/costs.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -77,7 +78,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'module-2',       component: PlanningGroupComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'} },
     { path: 'module-3',       component: ScopeComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'} },
     { path: 'module-4',       component: StakeholdersComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'} },
-    { path: 'module-5',       component: ScheduleComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'}},
+    { path: 'module-5',       component: ScheduleComponent , canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'} },
+    { path: 'module-6',       component: CostsComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'} },
     { path: 'actividad/:modulo', component: PreguntasComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'} },
     { path: 'actividad-dos/:modulodos', component: AhorcadoComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'} },
     { path: 'evaluacion/:evaluacion-modulos', component: EvaluacionComponent, canActivate: [AuthGuard, RoleGuard], data: {role: 'ROLE_ESTUDI'} },

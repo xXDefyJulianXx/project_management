@@ -8,11 +8,13 @@ import {SubItemEvalauacion} from './subItemEvalauacion';
 import swal from 'sweetalert2';
 import {PdfGenerateComponent} from '../components/pdf-generate/pdf-generate.component';
 import {NotificationsComponent} from '../notifications/notifications.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-evaluacion',
     templateUrl: './evaluacion.component.html',
-    styleUrls: ['./evaluacion.component.css']
+    styleUrls: ['./evaluacion.component.css'],
+    providers: [Title]
 })
 export class EvaluacionComponent implements OnInit {
 
@@ -23,7 +25,9 @@ export class EvaluacionComponent implements OnInit {
 
     constructor(private preguntasService: PreguntasService,
                 private router: Router,
-                private activatedRoute: ActivatedRoute) {
+                private activatedRoute: ActivatedRoute,
+                private title: Title) {
+        this.title.setTitle('Evalúa tus conocimientos');
     }
 
     ngOnInit() {

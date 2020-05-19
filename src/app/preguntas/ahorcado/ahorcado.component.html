@@ -1,34 +1,42 @@
-<br/>
-<br/>
-<div class="row">
-    <div class="col-md-12">
-        <div class="card card-stats" *ngFor="let item of items; let index = index">
-            <div class="card-header card-header-info card-header-icon">
-                <div class="card-icon">
-                    <h2>{{index + 1}}</h2>
-                </div>
-                <div class="col-md-12">
-                    <h3 class="card-title text-left">{{item.pregunta}}</h3>
-                    <h3 class="card-title">{{index + 1}}/{{items.length}}</h3>
-                </div>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-info gray">
+                <h3 class="card-title">Actividad de aprendizaje - Módulo 2</h3>
             </div>
             <div class="card-body">
-                <div class="row">
-                    <div class="col-md-12 text-md-center">
-                        <img src='assets/ahorcado/{{item.intento}}.png' alt="Card image cap">
-                    </div>
-                    <div class="col-md-12 text-md-center">
-                        <div class="row">
-                            <div class="col-md-1 " *ngFor="let letra of item.secreto; let i = index">
-                                <input id="id{{i}}" type="text" class="col-md-12" name="{{letra}}"
-                                       (ngModelChange)="letra"
-                                       maxlength="1" (keypress)="validarLetra($event.key, i, item)">
+                <div id="typography">
+                    <div class="card-title">
+                        <div class="card card-stats" *ngFor="let item of items; let index = index">
+                            <div class="card-header card-header-info card-header-icon">
+                                <div class="card-icon">
+                                    <h2>{{index + 1}}</h2>
+                                </div>
+                                <div class="col-md-12">
+                                    <h3 class="card-title text-left">{{item.pregunta}}</h3>
+                                    <h3 class="card-title">{{index + 1}}/{{items.length}}</h3>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12 text-md-center">
+                                        <img src='assets/ahorcado/{{item.intento}}.png' alt="Card image cap">
+                                    </div>
+                                    <div class="col-md-12 text-md-center">
+                                        <div class="row">
+                                            <div class="col-md-1 " *ngFor="let letra of item.secreto; let i = index">
+                                                <input id="id{{i}}" type="text" class="col-md-12" name="{{letra}}"
+                                                    (ngModelChange)="letra" maxlength="1"
+                                                    (keypress)="validarLetra($event.key, i, item)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

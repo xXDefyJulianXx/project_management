@@ -18,7 +18,8 @@ import { PdfGenerateComponent } from './pdf-generate/pdf-generate.component';
 import { PdfMakeWrapper } from 'pdfmake-wrapper';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import {AhorcadoComponent} from '../preguntas/ahorcado/ahorcado.component';
-import {EvaluacionComponent} from '../evaluacion/evaluacion.component'; // fonts provided for pdfmake
+import {EvaluacionComponent} from '../evaluacion/evaluacion.component';
+import { CostsComponent } from './costs/costs.component'; // fonts provided for pdfmake
  
 // Set the fonts to use
 PdfMakeWrapper.setFonts(pdfFonts);
@@ -43,7 +44,8 @@ PdfMakeWrapper.setFonts(pdfFonts);
     NotificationsComponent,
     PdfGenerateComponent,
     AhorcadoComponent,
-    EvaluacionComponent
+    EvaluacionComponent,
+    CostsComponent
   ],
   exports: [
     FooterComponent,

@@ -5,11 +5,13 @@ import {PreguntasService} from '../preguntas.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ItemAhorcado} from '../model/itemAhorcado';
 import swal from 'sweetalert2';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-ahorcado',
     templateUrl: './ahorcado.component.html',
-    styleUrls: ['./ahorcado.component.css']
+    styleUrls: ['./ahorcado.component.css'],
+    providers: [Title]
 })
 export class AhorcadoComponent implements OnInit {
 
@@ -20,7 +22,9 @@ export class AhorcadoComponent implements OnInit {
 
     constructor(private preguntasService: PreguntasService,
                 private router: Router,
-                private activatedRoute: ActivatedRoute) {
+                private activatedRoute: ActivatedRoute,
+                private title: Title) {
+        this.title.setTitle('Actividad de Aprendizaje 2');
     }
 
 

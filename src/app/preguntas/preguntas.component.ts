@@ -5,11 +5,13 @@ import {Pregunta} from './model/pregunta';
 import {Item} from './model/item';
 import {timer} from 'rxjs';
 import { NotificationsComponent } from 'app/notifications/notifications.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-preguntas',
     templateUrl: './preguntas.component.html',
-    styleUrls: ['./preguntas.component.css']
+    styleUrls: ['./preguntas.component.css'],
+    providers: [Title]
 })
 export class PreguntasComponent implements OnInit {
     @ViewChild('notifications') notifications: NotificationsComponent
@@ -21,7 +23,9 @@ export class PreguntasComponent implements OnInit {
 
     constructor(private preguntasService: PreguntasService,
                 private router: Router,
-                private activatedRoute: ActivatedRoute) {
+                private activatedRoute: ActivatedRoute,
+                private title: Title) {
+        this.title.setTitle('Actividad de Aprendizaje 1');
     }
 
     ngOnInit() {
@@ -80,7 +84,7 @@ export class PreguntasComponent implements OnInit {
                         this.item1 = null;
                         this.item2 = null;
                     })});
-                this.notifications.showNotification('notification_important','¡Incorrecto!','bottom', 'right', 4);;
+                this.notifications.showNotification('notification_important','¡Incorrecto!','bottom', 'right', 4);
             }
 
         }
